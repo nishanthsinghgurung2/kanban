@@ -61,7 +61,6 @@ class App extends Component {
 
   setSelectedTask = (name, stage) => {
     this.setState({ selectedTask: {name, stage}});
-    console.log(this.state);
   };
 
   enableMoveBack = () => this.state.selectedTask.stage > 0 && this.state.selectedTask.stage <= 3;
