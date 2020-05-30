@@ -2,7 +2,7 @@ import React from 'react';
 
 import Task from './Task';
 
-const Stage = ({ name, stageId, tasks }) => {
+const Stage = ({ name, stageId, tasks, setSelectedTask }) => {
   return (
     <div
       data-testid={`stage-${stageId}`}
@@ -11,13 +11,16 @@ const Stage = ({ name, stageId, tasks }) => {
         margin: '1rem',
         paddingBottom: '1rem',
         background: '#fafafa',
-      }}>
+      }}
+    >
       <h2>{name}</h2>
       <div>
         {tasks.map(task => (
           <Task
             key={task.name}
             name={task.name}
+            stage={stageId}
+            setSelectedTask={setSelectedTask}
           />
         ))}
       </div>
